@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Crear Película</h1>
+
+    <form method="POST" action="/movies/create">
+    <label for="title">Título:</label> <input type="text" name="title"><br><br>
+    <label for="rating">Rating:</label> <input type="text" name="rating"><br><br>
+    <label for="awards">Premios:</label> <input type="text" name="awards"><br><br>
+    <label for="length">Duración:</label> <input type="text" name="length"><br><br>
+    <label for="release_date">Fecha de estreno:</label> <input type="date" name="release_date"><br><br>
+    <label for="genre_id">Géneros:</label>
+    <select name="genre_id">
+    
+    <% genres.forEach(genre => { %>
+
+        <option value= "<%= genre.id%>">
+            <%= genre.name%>
+        </option>
+        
+    <% }); %>
+    </select>
+    <p>Actores:</p>
+    <select name="actor_id" multiple>
+    
+        <% actors.forEach(actor => { %>
+    
+            <option value= "<%= actor.id%>">
+                <%=actor.first_name + " " + actor.last_name%>
+            </option>
+            
+        <% }); %>
+        </select>
+
+
+    <input type="submit" title="Crear">    
+ 
+    </form>
+
+</body>
+</html>

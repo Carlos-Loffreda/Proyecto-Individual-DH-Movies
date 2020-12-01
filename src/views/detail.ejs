@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Seleccionaste ésta película</h2>
+        <p>Titulo: <%= detail.title %> </p>
+            <p>Rating: <%= detail.rating %></p>
+            <p>Premios: <%= detail.awards %></p>
+         <p>Duración: <%= detail.length %> minutos</p>
+     <p>Fecha de estreno: <%= detail.release_date %></p>
+     <% genres.forEach(genre => { %>
+         <% if (detail.genre_id === genre.id) { %>
+              <p>Género: <a href="/movies/genre/<%= genre.id%>"><%= genre.name %></a></p>
+          <% } %>
+     <% }); %>
+     <p>Actores:</p>
+        <ul>
+            <% detail.actors.forEach(actor=> { %>
+             <li>
+                   <a href="/movies/actor/<%= actor.id%>"><%= actor.first_name%><%= actor.last_name%> </a>
+             </li> 
+            <% }) %>
+        </ul>    
+     </p>
+    <form method="POST" action="/movies/delete/<%=detail.id%>?_method=DELETE">
+        <input type="submit" value="Borrar">
+
+    </form>
+ 
+    <a href="/movies/edit/<%=detail.id%>"><input type="submit" value="Modificar"></a>
+    <form method="POST" action="/movies/search">
+        <input type="text" name="search">
+        <input type="submit" title="Enviar">
+
+    </form>
+
+     
+</body>
+</html>

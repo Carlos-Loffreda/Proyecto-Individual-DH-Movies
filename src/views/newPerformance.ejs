@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Agregá tu actor favorito a una película</h1>
+
+</select>
+<p>Elegí un actor:</p>
+<form>
+<select name="actor_id" multiple>
+
+    <% actors.forEach(actor => { %>
+
+        <option value= "<%= actor.id%>">
+            <%=actor.first_name + " " + actor.last_name%>
+        </option>
+        
+    <% }); %>
+</select>
+</select>
+<p>Elegí una película:</p>
+<select name="movie_id" multiple>
+
+    <% movies.forEach(movie => { %>
+
+        <option value= "<%= movie.id%>">
+            <%=movie.totle%>
+        </option>
+        
+    <% }); %>
+    </select><br><br>
+    <input type="submit" title="Crear">
+</form>
+
+</body>
+</html>

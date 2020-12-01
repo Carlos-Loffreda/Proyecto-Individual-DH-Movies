@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2><%= actor.first_name + " " + actor.last_name %></h2>
+    
+    <h4> Películas en las que actuó <%= actor.first_name + " " + actor.last_name %>:</h4>
+    <% movieArray.forEach(movie => { %>
+    
+        <ul>
+        <li><p><%= movie.title %></p></li>
+        </ul>
+    <% }) %>
+    
+</body>
+</html>

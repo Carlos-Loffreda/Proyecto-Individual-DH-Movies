@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended</title>
+</head>
+<body>
+    <h1>Nuestro TOP 8 de películas</h1>
+    <ul>
+        <% for(let i = 0; i < top.length; i++){ %>
+            <li>
+                <a href="/movies/detail/<%= top[i].id %>"><%= top[i].title + " " + top[i].rating%></a>
+            </li>
+        <% } %>
+    </ul>
+    <form method="POST" action="/movies/serach">
+        <input type="text" name="search">
+        <input type="submit" title="Enviar">
+
+    </form>
+</body>
+</html>
