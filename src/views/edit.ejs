@@ -4,27 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/styleEdit.css">
 </head>
 <body>
-    <h1>Editá tu película</h1>
+    <header>
+        <div class="nav">
+            <img class="pop-image" src="/images/pop-neon-2.jpeg" alt="">  
+        <nav>
+    
+            <div class="menu">
+                <div class="links">
+                    <a href="/">Home</a>
+                    <a href="/movies/new" class="active">Novedades</a>
+                    <a href="/movies/create">Crear Película</a>
+                    <a href="/movies/recommended">Top 8</a>
+                    <a href="/movies/newPerformance">Nuevas Actuaciones</a>
+                </div>
+            </div>
+    
+        </nav>
+        </div>
+    
+        </header>
+    <h2>Editá tu película</h2>
 
-    <form method="POST" action="/movies/edit/<%= edit.id%>?_method=PUT">
+    <form class="formulario" method="POST" action="/movies/edit/<%= edit.id%>?_method=PUT">
         <p>Título: <input type="text" value=" <%=edit.title%>" name="title"></p>
         <p>Rating: <input type="text" value=" <%=edit.rating%>" name="rating"></p>  
         <p>Premios: <input type="text" value=" <%=edit.awards%>" name="awards"></p>
         <p>Duración: <input type="text" value=" <%=edit.length%>" name="length"></p>  
-        <p>Fecha de estreno: <input type="date" value=" <%=edit.release_date%>" name="release_date" autocomplete="on"></p>
+        <p>Fecha de estreno: <input type="date" value=" <%=edit.release_date%>" name="release_date"></p>
        <p>Género :</p><select name="genre_id">
     
             <% genres.forEach(genre => { %>
-        
-                <option value= "<%= genre.id%>">
+                <% if (edit.GenreId === genre.id) { %>
+                <option value= "<%= genre.id%>" selected>
                     <%= genre.name%>
                 </option>
-                
-            <% }); %>
+            <% } else { %>
+                    <option value= "<%= genre.id%>">
+                        <%= genre.name%>
+                    </option>    
+            <% } %>
+         <% }) %>
             </select><br><br>
-        <input type="submit" title="Editar">        
+            <p>Actores:</p>
+            <select name="actors" multiple>
+            <% actors.forEach(actor => { %>
+                <% if (edit.actors.some (editActor => editActor.id === actor.id)) { %>
+                <option value="<%= actor.id %>" selected><%=actor.first_name + " " + actor.last_name%></option>
+                <% } else { %>
+                    <option value="<%= actor.id %>"><%=actor.first_name + " " + actor.last_name%></option>
+                    <% } %> 
+         <% }) %>
+        <input class="editar" type="submit" title="Editar">        
     </form>
+    <div class="boody">
+        <h3 class="neon" data-text="DH MOVIES">DH MOVIES</h3>
+        </div>
 </body>
 </html>

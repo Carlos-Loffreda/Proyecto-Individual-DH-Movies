@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/stylesheets/styleGenre.css">
 </head>
 <body>
+    <header>
+        <div class="nav" >
+            <img class="pop-image" src="/images/pop-neon-2.jpeg" alt="">  
+        <nav>
+    
+            <div class="menu">
+                <div class="links">
+                    <a href="/">Home</a>
+                    <a href="/movies/new" class="active">Novedades</a>
+                    <a href="/movies/create">Crear Película</a>
+                    <a href="/movies/recommended">Top 8</a>
+                    <a href="/movies/newPerformance">Nuevas Actuaciones</a>
+                </div>
+            </div>
+    
+        </nav>
+        </div>
+    
+        </header>
     <h2><%= genre.name %></h2>
     
     <h4> Películas del género <%= genre.name%>:</h4>
@@ -16,6 +35,8 @@
         <li><p><%= movie.title %></p></li>
         </ul>
     <% }) %>
-              
+    <div class="boody">
+        <h3 class="neon" data-text="DH MOVIES">DH MOVIES</h3>
+        </div>         
 </body>
 </html>

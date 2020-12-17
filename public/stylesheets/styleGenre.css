@@ -4,21 +4,25 @@ body {
   background-size: 100%;
 }
 *{
-  margin: 0;
-  padding: 0;
+  margin: 5;
+  padding: 5;
   box-sizing: border-box;
   font-family: "Lexend Deca";
 }
-h1 {
+h2 {
 color: palevioletred;
-text-decoration: underline, palevioletred;
-font-family: "Copperplate Gothic Light", fantasy; font-size: 50px;
+font-family: "Copperplate Gothic Light", fantasy; font-size: 35px;
 margin-left: 10px;
 }
-a {
+h4 {
 color: palevioletred;
-font-family: "Copperplate Gothic Light", fantasy; font-size: 28px;
+font-family: "Copperplate Gothic Light", fantasy; font-size: 18px;
 margin-left: 10px;
+}
+p {
+  color: palevioletred;
+  font-family: "Copperplate Gothic Light", fantasy; font-size: 15px;
+  margin-left: -30px;
 }
 header {
 background: black
@@ -42,6 +46,7 @@ transition: border .3s ease;
 justify-content: space-around;
 font-family: "Copperplate Gothic Light", fantasy; font-size: 25px;
 margin:7px;
+margin-top: 40px;
 }
 header nav .menu .links a .active {
 border-bottom-color: #e84855
@@ -52,50 +57,46 @@ border-bottom-color: #e84855
 .nav {
   display: flex;
   justify-content: flex-end;
-  margin-top: 28px;
 }
 .neon {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-margin: 0;
-padding: 0 20px;
-font-size: 3em;
-color: #fff;
-text-shadow: 0 0 20px #ff005b;
-font-family: 'Quicksand', sans-serif;
-}
-.boody {
-margin: 0;
-padding: 0;
-background-size: cover;
-}
-.neon:after {
-  content: attr(data-text);
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
   padding: 0 20px;
-  z-index: -1;
-  color: #ff005b;
-  filter: blur(15px);
-}
-.neon:before {
-  content:"";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-  opacity: .5;
-  filter: blur(40px);
-}
-.pop-image {
-  width: 130px;
-  margin-top: -10px;
-  margin-bottom: -10px;
-}
-
-
+  font-size: 3em;
+  color: #fff;
+  text-shadow: 0 0 20px #ff005b;
+  font-family: 'Quicksand', sans-serif;
+  }
+  .boody {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  }
+  .neon:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 20px;
+    z-index: -1;
+    color: #ff005b;
+    filter: blur(15px);
+  }
+  .neon:before {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: .5;
+    filter: blur(40px);
+  }
+  .pop-image {
+    width: 130px;
+    margin-top: -10px;
+  }

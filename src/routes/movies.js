@@ -17,4 +17,6 @@ router.delete("/delete/:id", moviesController.delete);
 router.get("/genre/:id", moviesController.genre);
 router.get("/actor/:id", moviesController.actor);
 router.get("/newPerformance", moviesController.newPerformance);
+router.post("/newPerformance", moviesController.newPerformanceNow);
+
 module.exports = router;

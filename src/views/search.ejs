@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novelties</title>
+    <link rel="stylesheet" href="/stylesheets/styleSearch.css">
 </head>
 <body>
-    <h1>Tu Búsqueda</h1>
+    <header>
+        <div class="nav">
+            <img class="pop-image" src="/images/pop-neon-2.jpeg" alt="">  
+        <nav>
+    
+            <div class="menu">
+                <div class="links">
+                    <a href="/">Home</a>
+                    <a href="/movies/new" class="active">Novedades</a>
+                    <a href="/movies/create">Crear Película</a>
+                    <a href="/movies/recommended">Top 8</a>
+                    <a href="/movies/newPerformance">Nuevas Actuaciones</a>
+                </div>
+            </div>
+    
+        </nav>
+        </div>
+    
+        </header>
+    <h2>Tu Búsqueda</h2>
     <ul>
         <% for(let i = 0; i < searchMovies.length; i++){ %>
             <li>
@@ -14,10 +34,14 @@
             </li>
         <% } %>
     </ul>
+    <div class="form">
     <form method="POST" action="/movies/search">
-        <input type="text" name="search">
-        <input type="submit" title="Enviar">
-
+        <input class="barra" type="text" name="search">
+        <input class="enviar" type="submit" title="Enviar">
     </form>
+    </div>
+    <div class="boody">
+        <h3 class="neon" data-text="DH MOVIES">DH MOVIES</h3>
+        </div>
 </body>
 </html>

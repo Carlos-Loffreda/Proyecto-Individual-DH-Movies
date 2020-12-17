@@ -4,22 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies-DH</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/stylesheets/styleMovies.css">
 </head>
 <body>
+    <header>
+        <div class="nav"> 
+        <nav>
+            <div class="menu">
+                <div class="links">
+                    <a href="/">Home</a>
+                    <a href="/movies/new" class="active">Novedades</a>
+                    <a href="/movies/create">Crear Película</a>
+                    <a href="/movies/recommended">Top 8</a>
+                    <a href="/movies/newPerformance">Nuevas Actuaciones</a>
+                </div>
+            </div>
+            <img class="pop-image" src="/images/pop-neon-2.jpeg" alt="">
+            
+        </nav>
+        </div>
     
-    <h1>Litado de películas</h1>
+        </header>
+    
+    <h2>Listado de películas</h2>
     <ul>
         <% for(let i = 0; i < movie.length; i++){ %>
             <li>
                 <a href="./movies/detail/<%= movie[i].id %>"> <%= movie[i].title%></a>
             </li>
         <% } %>
-    </ul>
-    <form method="POST" action="/movies/search">
-        <input type="text" name="search">
-        <input type="submit" title="Enviar">
-
+    </ul><br><br>
+    <div class="form">
+    <form class="form-search" method="POST" action="/movies/search">
+        <div class="inputs">
+        <input class="input-search-barra" type="text" name="search" placeholder="Buscá tu película acá">
+        <input class="input-search-enviar" type="submit" title="Enviar">
+        </div>
     </form>
+    </div>
+    <div class="boody">
+        <h3 class="neon" data-text="DH MOVIES">DH MOVIES</h3>
+        </div>
 </body>
 </html>

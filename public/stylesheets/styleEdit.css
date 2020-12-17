@@ -1,0 +1,123 @@
+body {
+  background-image: url(https://p1.pxfuel.com/preview/879/785/83/auditorium-stadium-bench-chairs.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lexend Deca";
+}
+h2 {
+color: palevioletred;
+text-decoration: underline, palevioletred;
+font-family: "Copperplate Gothic Light", fantasy; font-size: 35px;
+margin-left: 15px;
+}
+a {
+color: palevioletred;
+}
+p {
+  color: palevioletred;
+  font-family: "Copperplate Gothic Light", fantasy; font-size: 18px;
+  margin-top: 25px;
+  margin-left: 15px;
+}
+header {
+background: black
+}
+header nav .menu {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+}
+header nav .menu .links {
+display: flex;
+}
+header nav .menu .links a {
+display: flex;
+padding: 40px, 40px;
+color:palevioletred;
+text-decoration: none;
+border-bottom: 6px solid transparent;
+transition: border .3s ease;
+justify-content: space-around;
+font-family: "Copperplate Gothic Light", fantasy; font-size: 25px;
+margin:7px;
+}
+header nav .menu .links a .active {
+border-bottom-color: #e84855
+}
+header nav .menu .links a:hover {
+border-bottom-color: #e84855
+}
+.editar {
+  display: flex;
+  margin-top: 15px;
+  border: 2px solid palevioletred;
+  background: none "editar";
+  padding: 2px 5px;
+  font-size: 15px;
+  font-family: "montserrat";
+  margin-top: 3px;
+  margin-left: 15px;
+}
+option {
+margin-left: 15px;
+}
+select {
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+.formulario p input {
+  border: 2px solid palevioletred;
+}
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 28px;
+}
+.neon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0 20px;
+  font-size: 3em;
+  color: #fff;
+  text-shadow: 0 0 20px #ff005b;
+  font-family: 'Quicksand', sans-serif;
+  }
+  .boody {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  }
+  .neon:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 20px;
+    z-index: -1;
+    color: #ff005b;
+    filter: blur(15px);
+  }
+  .neon:before {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: .5;
+    filter: blur(40px);
+  }
+  .pop-image {
+    width: 130px;
+    margin-top: -30px;
+  }

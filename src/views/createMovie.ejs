@@ -4,10 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/styleCreate.css">
 </head>
 <body>
+    <header>
+        <div class="nav">
+            <img class="pop-image" src="/images/pop-neon-2.jpeg" alt="">  
+        <nav>
+    
+            <div class="menu">
+                <div class="links">
+                    <a href="/">Home</a>
+                    <a href="/movies/new" class="active">Novedades</a>
+                    <a href="/movies/create">Crear Película</a>
+                    <a href="/movies/recommended">Top 8</a>
+                    <a href="/movies/newPerformance">Nuevas Actuaciones</a>
+                </div>
+            </div>
+    
+        </nav>
+        </div>
+    
+        </header>
 
-    <h1>Crear Película</h1>
+    <h2>Crear Película</h2>
 
     <form method="POST" action="/movies/create">
     <label for="title">Título:</label> <input type="text" name="title"><br><br>
@@ -19,29 +39,31 @@
     <select name="genre_id">
     
     <% genres.forEach(genre => { %>
-
+        <div class="generos">
         <option value= "<%= genre.id%>">
             <%= genre.name%>
         </option>
-        
+        </div>
     <% }); %>
-    </select>
+    </select><br><br>
     <p>Actores:</p>
-    <select name="actor_id" multiple>
+    <select name="actors" multiple>
     
         <% actors.forEach(actor => { %>
     
-            <option value= "<%= actor.id%>">
+            <option class="actores" value= "<%= actor.id%>">
                 <%=actor.first_name + " " + actor.last_name%>
             </option>
             
         <% }); %>
-        </select>
+        </select><br><br>
 
 
     <input type="submit" title="Crear">    
  
     </form>
-
+    <div class="boody">
+        <h3 class="neon" data-text="DH MOVIES">DH MOVIES</h3>
+        </div>
 </body>
 </html>

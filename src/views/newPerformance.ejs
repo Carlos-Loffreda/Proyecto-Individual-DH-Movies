@@ -4,14 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/styleNewPerformance.css">
 </head>
 <body>
-<h1>Agregá tu actor favorito a una película</h1>
+    <header>
+        <div class="nav">
+            <img class="pop-image" src="/images/pop-neon-2.jpeg" alt="">  
+        <nav>
+    
+            <div class="menu">
+                <div class="links">
+                    <a href="/">Home</a>
+                    <a href="/movies/new" class="active">Novedades</a>
+                    <a href="/movies/create">Crear Película</a>
+                    <a href="/movies/recommended">Top 8</a>
+                    <a href="/movies/newPerformance">Nuevas Actuaciones</a>
+                </div>
+            </div>
+    
+        </nav>
+        </div>
+    
+        </header>
+<h2>Agregá tu actor favorito a una película</h2>
+<form method="POST" action="/movies/newPerformance">
+<p>Elegí una película:</p>
+<select class="select-movie" name="movie_id" multiple>
 
-</select>
-<p>Elegí un actor:</p>
-<form>
-<select name="actor_id" multiple>
+    <% movies.forEach(movie => { %>
+
+        <option value= "<%= movie.id%>">
+            <%=movie.title%>
+        </option>
+        
+    <% }); %>
+    </select><br><br>
+    <p>Elegí un actor:</p>    
+<select class="select-actor" name="actor_id" multiple>
 
     <% actors.forEach(actor => { %>
 
@@ -21,20 +50,10 @@
         
     <% }); %>
 </select>
-</select>
-<p>Elegí una película:</p>
-<select name="movie_id" multiple>
-
-    <% movies.forEach(movie => { %>
-
-        <option value= "<%= movie.id%>">
-            <%=movie.totle%>
-        </option>
-        
-    <% }); %>
-    </select><br><br>
     <input type="submit" title="Crear">
 </form>
-
+<div class="boody">
+    <h3 class="neon" data-text="DH MOVIES">DH MOVIES</h3>
+    </div>
 </body>
 </html>

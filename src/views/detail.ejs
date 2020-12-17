@@ -4,40 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/styleDetail.css">
 </head>
 <body>
+    <header>
+        <div class="nav">
+            <img class="pop-image" src="/images/pop-neon-2.jpeg" alt="">  
+        <nav>
+    
+            <div class="menu">
+                <div class="links">
+                    <a href="/">Home</a>
+                    <a href="/movies/new" class="active">Novedades</a>
+                    <a href="/movies/create">Crear Película</a>
+                    <a href="/movies/recommended">Top 8</a>
+                    <a href="/movies/newPerformance">Nuevas Actuaciones</a>
+                </div>
+            </div>
+    
+        </nav>
+        </div>
+    
+        </header>
     <h2>Seleccionaste ésta película</h2>
-        <p>Titulo: <%= detail.title %> </p>
-            <p>Rating: <%= detail.rating %></p>
-            <p>Premios: <%= detail.awards %></p>
-         <p>Duración: <%= detail.length %> minutos</p>
-     <p>Fecha de estreno: <%= detail.release_date %></p>
+        <h3>Titulo: <%= detail.title %></h3>
+            <h3>Rating: <%= detail.rating %></h3>
+            <h3>Premios: <%= detail.awards %></h3>
+         <h3>Duración: <%= detail.length %> minutos</h3>
+     <h3>Fecha de estreno: <%= detail.release_date %></h3>
      <% genres.forEach(genre => { %>
          <% if (detail.genre_id === genre.id) { %>
-              <p>Género: <a href="/movies/genre/<%= genre.id%>"><%= genre.name %></a></p>
+            <div class="gen-act">
+              <h3>Género:</h3>  <ul><li> <a href="/movies/genre/<%= genre.id%>"><%= genre.name %></a></li></ul></p>
           <% } %>
      <% }); %>
-     <p>Actores:</p>
+     <h3>Actores:</h3>
         <ul>
             <% detail.actors.forEach(actor=> { %>
              <li>
                    <a href="/movies/actor/<%= actor.id%>"><%= actor.first_name%><%= actor.last_name%> </a>
              </li> 
             <% }) %>
-        </ul>    
-     </p>
+        </ul>
+            </div>    
+     <div class="form-3">
     <form method="POST" action="/movies/delete/<%=detail.id%>?_method=DELETE">
         <input type="submit" value="Borrar">
 
     </form>
- 
-    <a href="/movies/edit/<%=detail.id%>"><input type="submit" value="Modificar"></a>
+    <div class="modificar-input">
+    <a href="/movies/edit/<%=detail.id%>"><input class="modificar" type="submit" value="Modificar"></a></div>
     <form method="POST" action="/movies/search">
+        <div class="enviar">
         <input type="text" name="search">
-        <input type="submit" title="Enviar">
+        <input class="enviarr" type="submit" title="Enviar">
+        </div>
 
     </form>
-
-     
+    </div>
+    <div class="boody">
+        <h3 class="neon" data-text="DH MOVIES">DH MOVIES</h3>
+        </div>
 </body>
 </html>

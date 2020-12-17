@@ -2,10 +2,6 @@ const {sequelize, DataTypes} = require("sequelize");
 const moment = require("moment");
 module.exports = (sequelize, DataTypes)=>{
     const Movie = sequelize.define("Movie",{
-            id: { 
-                type:DataTypes.INTEGER,
-                primaryKey: true
-            },
             title: DataTypes.STRING,
             rating: DataTypes.INTEGER,
             awards: DataTypes.INTEGER,
@@ -13,7 +9,7 @@ module.exports = (sequelize, DataTypes)=>{
             release_date: {
                 type: DataTypes.DATEONLY,
                 get() {
-                    return moment(this.getDataValue('release_date')).add(3, 'hours').format('YYYY-MM-DD');
+                    return moment(this.getDataValue('release_date')).add(3, 'hours').format('DD-MM-YYYY');
                 }
             },
             genre_id: DataTypes.INTEGER
