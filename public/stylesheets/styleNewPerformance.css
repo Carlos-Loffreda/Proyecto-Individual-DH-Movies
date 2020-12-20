@@ -104,3 +104,11 @@ input {
     width: 130px;
     margin-top: -10px;
   }
+  .create {
+    border: 2px solid palevioletred;
+    background: none "borrar";
+    padding: 2px 5px;
+    font-size: 15px;
+    font-family: "montserrat";
+    margin-top: 3px;
+  }

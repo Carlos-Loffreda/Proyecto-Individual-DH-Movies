@@ -18,5 +18,6 @@ router.get("/genre/:id", moviesController.genre);
 router.get("/actor/:id", moviesController.actor);
 router.get("/newPerformance", moviesController.newPerformance);
 router.post("/newPerformance", moviesController.newPerformanceNow);
+router.get("/movieList", moviesController.movieList);
 
 module.exports = router;

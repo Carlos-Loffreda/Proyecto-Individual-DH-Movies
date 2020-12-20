@@ -191,7 +191,10 @@ module.exports = {
         } catch   (error){
             console.log(error);
         }
-    }  
+    },
+    movieList: (req, res)=>{
+        res.render("/movies");
+    }
 }
 
 
