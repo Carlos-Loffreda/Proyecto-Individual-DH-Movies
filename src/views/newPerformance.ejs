@@ -29,7 +29,7 @@
 <h2>Agregá tu actor favorito a una película</h2>
 <form method="POST" action="/movies/newPerformance">
 <p>Elegí una película:</p>
-<select class="select-movie" name="movie_id" multiple>
+<select class="select-movie" name="movie_id">
 
     <% movies.forEach(movie => { %>
 
@@ -40,7 +40,7 @@
     <% }); %>
     </select><br><br>
     <p>Elegí un actor:</p>    
-<select class="select-actor" name="actor_id" multiple>
+<select class="select-actor" name="actor_id">
 
     <% actors.forEach(actor => { %>
 

@@ -170,24 +170,24 @@ module.exports = {
     },
     newPerformance: async (req, res)=>{
         try {
-            let editMovie = req.params.id;
-            const edit = await Movie.findByPk(editMovie, {include: "actors"});
             let actors = await Actor.findAll();
             let movies = await Movie.findAll();
 
-        res.render("newPerformance", {edit, actors, movies});
+        res.render("newPerformance", {actors, movies});
     }   catch (error){
         console.log(error);
     }
     },
     newPerformanceNow: async (req,res)=>{
         try {
-         let newMovie = req.body.movies_id;
-         let edit = await Movie.findByPk(newMovie, {include: ["movies", "actors"]})
-         await edit.addActors(req.body.actors_id);
-         await edit.update(req.body);
+         let newMovie = req.body.movie_id;
+         console.log(req.body);
+         console.log(newMovie);
+         let detail = await Movie.findByPk(newMovie, {include: ["actors"]})
+         await detail.addActors(req.body.actor_id)
          //res.json(edit);
-         res.render("edit", {edit, genres, actors});
+         //res.redirect("/");
+            res.redirect("/movies")
         } catch   (error){
             console.log(error);
         }
