@@ -20,5 +20,17 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Carlos-Loffreda/Proyecto-Individual-DH-Movies.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Carlos-Loffreda/Proyecto-Individual-DH-Movies/issues"
+  },
+  "homepage": "https://github.com/Carlos-Loffreda/Proyecto-Individual-DH-Movies#readme",
+  "description": ""
 }
